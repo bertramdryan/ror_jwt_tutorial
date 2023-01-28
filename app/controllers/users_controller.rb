@@ -16,13 +16,13 @@ class UsersController < ApplicationController
     if @user.save
       render json: @user, status: 201
     else
-      render json: {errors: @user.errors.full_massage}, status 503
+      render json: {errors: @user.errors.full_massage}, status: 503
     end
   end
 
   def update
     unless @user.update(user_params)
-      render json: {errors: @user.errors.full_message}, status 503
+      render json: {errors: @user.errors.full_message}, status: 503
     end
   end
 
